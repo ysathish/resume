@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <!-- About me -->
+        <div class="col-lg shadow border m-1">
+            <div class="text-center">
+                <h2>About Me</h2>
+            <img src="../../assets/pic.jpg" alt="profile pic" width="256" height="256" class="rounded-circle"/>
+            <p>hello this is sathish ,iam a fullstack developer </p>
+            </div>
+            
+             <!-- Featured Projects -->
+        </div>
+        <div class="col-lg shadow border m-1">
+            <div class="text-center"> <h2 >Featured Projects</h2>
+                <h4>{{featuredProjects.name}}</h4>
+            </div>
+            <carousel>
+                <div *ngFor="let picture of featuredProjects.pictures">
+                    <slide><img src={{picture}} alt="slide" style="display: block;width: 100%;"></slide>
+                </div>
+            </carousel> 
+            <p class="mt-2">{{featuredProjects.description}}</p>
+            <p>Visit the portfolio to learn more !</p>
+        </div>
+    </div>
+</div>

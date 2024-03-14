@@ -1,0 +1,56 @@
+<div class="container">
+   <div class="mb-2">
+    <div>
+        <button class="btn btn-outline-primary mb-2 me-2" (click)="isCollapsed=!isCollapsed">Filter</button>
+        <button class="btn btn-outline-secondary mb-2" (click)="resetFilter()" [hidden]="!filtering">Clear</button>
+    </div>
+    <div [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="border mb-2 shadow-sm" style="width: 250px;" >
+        <form>
+            <div class="row mx-0">
+                <div class="col">
+                    <small><b>Langauages</b></small>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input
+                             type="checkbox"
+                             class="form-check-input postion-static me-2"
+                             [(ngModel)]="typescript"
+                             (change)="filter()"
+                             name="TypeScript">
+                            <label class="form-check-lable small">TypeScript</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <small><b>FrameWorks</b>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input
+                                 type="checkbox"
+                                 class="form-check-input postion-static me-2"
+                                 [(ngModel)]="angular"
+                                 (change)="filter()"
+                                 name="Angular">
+                                <label class="form-check-lable small">Angular</label>
+                            </div>
+                        </div>
+                    </small>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </div>
+   </div> 
+       
+       
+    <div class="row">
+        <div *ngFor="let projectName of projectName" class="col-lg-4 col-md-6 mb-4" style="max-width: 380px; min-width:380px;">
+            <app-project-card [projectName]="projectName"></app-project-card>
+        </div>
+    </div>
+    
+</div>
